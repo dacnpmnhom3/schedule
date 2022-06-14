@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.3.3-rc.0",
+    "node-schedule": "^2.1.0",
+    "nodemailer": "^6.7.5",
+    "sequelize": "^6.7.0",
+    "uuid": "^8.3.2"
+  },
+  "name": "command",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node application/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
