@@ -52,7 +52,7 @@ Seller.init(
     },
     isVerified: {
       type: DataTypes.BOOLEAN,
-      default: false,
+      default: true,
     },
     code: {
       type: DataTypes.STRING,
