@@ -1,26 +1,18 @@
 const sellerRepo = require("../infrastructure/seller.repo");
 const sellerLogRepo = require("../infrastructure/sellerLog.repo");
 const EmailHelper = require("../helper/email/EmailHelper");
+const axiosClient = require("./axiosClient");
 
 const emailHelper = new EmailHelper();
 const util = require("../helper/util");
 
 const createSeller = async (sellerLog) => {
-  //check rules if a phone number we have only one seller with this phone number
-
-  //send mail to verify
-  // const code = util.makeCode();
-
-  // const mailOptions = {
-  //   from: "Shop",
-  //   to: sellerLog.data.email,
-  //   subject: "Verify your account",
-  //   content: {
-  //     link: "http://localhost:3000/verify" + code,
-  //   },
-  // };
-
-  // await emailHelper.sendRegisterSeller(mailOptions);
+  //Call API to create store for seller
+  const result = await axiosClient.post("/api/store", {
+    store_name: sellerLog.data.fullName,
+    store_owner_id: sellerLog.idEvent,
+  });
+  console.log(result);
 
   return {
     id: sellerLog.idEvent,
